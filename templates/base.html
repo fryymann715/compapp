@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="/stylesheets/base_layout.css" rel="stylesheet" type="text/css">
+        <title>Title</title>
+    </head>
+    <body>
+
+        <h1>Comp Test</h1>
+
+        <div style="background-color: grey; width: 75%; padding: 2em;">
+            <form>
+                <div class="comp_field row"><span class="attr-label">Type:</span>
+                <select>
+                    {% if types %}
+                    {% for type in types %}
+                    <option>{{type}}</option>
+                    {% endfor %}
+                    {% endif %}s
+
+                </select>
+                </div>
+                <div class="comp_field row"><span class="attr-label">Check</span>
+                    <textarea class="text-box" name="check_number" rows="1" cols="8"></textarea>
+                </div>
+
+                <div class="comp_field row"><span class="attr-label">Item:</span>
+                    <textarea class="text-box" name="item_name" rows="1" cols="40"></textarea>
+                </div>
+
+                <div class="comp_field row"><span class="attr-label">Reason:</span>
+                    <textarea class="text-box" name="reason" rows="1" cols="60"></textarea>
+                </div>
+
+                <div class="comp_field row"><span class="attr-label">Amount:</span>
+                    <textarea class="text-box" name="amount" rows="1" cols="6"></textarea>
+                </div>
+
+                <div class="comp_field row"><span class="attr-label">Server:</span>
+                    <textarea class="text-box" name="server" rows="1" cols="16"></textarea>
+                </div>
+
+                <div class="comp_field row"><span class="attr-label">Manager:</span>
+                    <select>
+                        {% if managers %}
+                            {% for manager in managers %}
+                        <option>{{manager}}</option>
+                            {% endfor %}
+                        {% endif %}
+
+                    </select>
+                </div>
+
+                    <button>Submit</button>
+
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+
+body {
+    background-color: tan;
+}
+
+.comp_field {
+
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+.attr-label {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.text-box {
+    height: 15px;
+}
