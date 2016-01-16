@@ -9,9 +9,11 @@ comp_type = {0: "Cold Food", 1: "Service", 2: "Time", 3: "Quality", 4: "Didn't L
 # Pull the text from the pdf file.
 def get_comp_txt():
     print("Opening File...")
-    compfile = open('pdfminer/paymentdetail.txt')
+    compfile = open(r'pdfminer/paymentdetail.txt')
     print("Reading File...")
     comptxt = compfile.read()
+    line = compfile.readline()
+    print line
     compfile.close()
     print("Closing File...")
     return comptxt
@@ -37,9 +39,19 @@ def get_specific_comp(comptxt, comp_type):
 
 
 # Iterates through the given text and pulls the needed items
-def pull_comps(comptxt):
+def pull_comps():
     comp_dict = {}
-    for line in comptxt:
+    compfile = open('pdfminer/comps.txt')
+    lines = compfile.readlines()
+    check_number = []
+    for lyne in lines:
+        lyne = lyne.rstrip()
+        if lyne.isdigit():
+            lyne = int(lyne)
+            if lyne >= 1000:
+                check_number.append(lyne)
+    print check_number
+
 
 
 
@@ -54,16 +66,14 @@ def get_all_comps(comptxt):
             counter += 1
         return current_comps
 
-payment_detail_text = get_comp_txt()
-comp_all_text = extract_comps(payment_detail_text)
-comp_dict = get_all_comps(comp_all_text)
-
-time_comps = pull_comps(comp_dict[comp_type[2]])
 
 
-print comp_dict[comp_type[2]]
+time_comps = pull_comps()
+
+
+#print comp_dict[comp_type[2]]
 print " "
 print " "
-print time_comps
+#print time_comps
 
 
