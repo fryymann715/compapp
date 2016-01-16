@@ -44,13 +44,19 @@ def pull_comps():
     compfile = open('pdfminer/comps.txt')
     lines = compfile.readlines()
     check_number = []
+    people = []
     for lyne in lines:
         lyne = lyne.rstrip()
         if lyne.isdigit():
             lyne = int(lyne)
             if lyne >= 1000:
                 check_number.append(lyne)
+        elif "." and "*" not in lyne:
+            people.append(lyne)
+
+
     print check_number
+    print people
 
 
 
