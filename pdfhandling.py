@@ -49,6 +49,7 @@ def get_specific_comp(compfile, comp_type):
 def pull_comps(comp_list):
     comp_dict = {}
     check_number = []
+    new_comps = []
 
     for lyne in comp_list:
         lyne = lyne.rstrip()
@@ -57,11 +58,26 @@ def pull_comps(comp_list):
             if lyne >= 1000:
                 check_number.append(lyne)
     max_counter = len(check_number)
+    print check_number
     counter = 0
-    while counter < 4:
-        new_comp = comp_list[]
+    while counter < 3:
+        new_comp = []
+        checknum = comp_list.index(str(check_number[counter])+'\n')
+        new_comp.append(comp_list[checknum])
+        manager = checknum+4
+        new_comp.append(comp_list[manager])
+        price = manager + 6
+        new_comp.append(comp_list[price])
+        server = price + 4
+        new_comp.append(comp_list[server])
+        itemname = server + 4
+        new_comp.append(comp_list[itemname])
         counter += 1
-    return check_number
+        new_comps.append(new_comp)
+    print new_comps
+    print len(new_comps)
+
+    #print new_comp
 
 
 def get_all_comps(comptxt):
@@ -75,7 +91,7 @@ def get_all_comps(comptxt):
 
 # time_comps = pull_comps()
 
-cf_comp = get_specific_comp(comp_txt_file, comp_type[0])
+cf_comp = get_specific_comp(comp_txt_file, comp_type[2])
 print pull_comps(cf_comp)
 
 
