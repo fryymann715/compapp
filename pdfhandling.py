@@ -60,6 +60,7 @@ def pull_comps(comp_list):
     counter = 0
     while counter < 4:
         new_comp = comp_list[]
+        counter += 1
     return check_number
 
 
